@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "uShellTestGameModeBase.generated.h"
+#include "GrasshopperARGameModeBase.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class USHELLTEST_API AuShellTestGameModeBase : public AGameModeBase
+class GRASSHOPPERAR_API AGrasshopperARGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	

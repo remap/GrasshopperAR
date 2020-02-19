@@ -2,15 +2,15 @@
 
 using UnrealBuildTool;
 
-public class uShellTest : ModuleRules
+public class GrasshopperAR : ModuleRules
 {
-	public uShellTest(ReadOnlyTargetRules Target) : base(Target)
+	public GrasshopperAR(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 
-		PrivateDependencyModuleNames.AddRange(new string[] {  });
+		PrivateDependencyModuleNames.AddRange(new string[] { "DDHelpers", "DDManager", "DDBase", "DDLog", "DDBlueprints" });
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
