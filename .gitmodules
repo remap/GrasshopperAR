@@ -1,3 +1,3 @@
 [submodule "Plugins/ReLog"]
-	path = Plugins/ReLog
-	url = https://github.com/peetonn/UE4_ReLog.git
+	path = Plugins/DDTools
+	url = https://github.com/remap/DDTools.git
