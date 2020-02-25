@@ -25,11 +25,11 @@ AGHGameMode::SpawnPlayerController(ENetRole InRemoteRole, const FString & Option
     if (platform.Equals(TEXT("Android")) ||
         platform.Equals(TEXT("IOS")))
     {
-        controller = SpawnPlayerControllerCommon(InRemoteRole, FVector(), FRotator(), arPlayerController);
+        controller = SpawnPlayerControllerCommon(InRemoteRole, FVector::ZeroVector, FRotator::ZeroRotator, arPlayerController);
     }
     else
     {
-        controller = SpawnPlayerControllerCommon(InRemoteRole, FVector(), FRotator(), vrPlayerController);
+        controller = SpawnPlayerControllerCommon(InRemoteRole, FVector::ZeroVector, FRotator::ZeroRotator, vrPlayerController);
     }
     
     return controller;
