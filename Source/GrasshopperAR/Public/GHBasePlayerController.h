@@ -6,6 +6,8 @@
 #include "GameFramework/PlayerController.h"
 #include "GHBasePlayerController.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FToggleMasterUiDelegate);
+
 /**
  * 
  */
@@ -17,4 +19,7 @@ class GRASSHOPPERAR_API AGHBasePlayerController : public APlayerController
 public:
     UPROPERTY(EditAnywhere)
     TSubclassOf<APawn> ghPawnClass;
+    
+    UPROPERTY(BlueprintCallable, BlueprintAssignable)
+    FToggleMasterUiDelegate OnToggleMasterUiDelegate;
 };

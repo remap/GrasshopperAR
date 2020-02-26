@@ -2,10 +2,11 @@
 
 
 #include "blueprintHelpers.h"
-#include "HAL/FileManagerGeneric.h"
-#include "Modules/ModuleManager.h"
 #include "DDLog.h"
 #include "DDManager.h"
+
+#include <Modules/ModuleManager.h>
+#include <Kismet/GameplayStatics.h>
 
 TArray<UDDModuleWidget*>
 UblueprintHelpers::createPluginWidgets(UUserWidget *parentWidget)
@@ -53,4 +54,12 @@ UblueprintHelpers::createPluginWidgets(UUserWidget *parentWidget)
     }
 
     return pluginWidgets;
+}
+
+bool
+UblueprintHelpers::isArCapableDevice()
+{
+    FString platform = UGameplayStatics::GetPlatformName();
+    
+    return platform.Equals(TEXT("Android")) || platform.Equals(TEXT("IOS"));
 }

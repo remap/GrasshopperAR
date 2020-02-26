@@ -24,6 +24,9 @@ public:
     UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create Plugins Widgets"), Category = "Master UI")
     static TArray<UDDModuleWidget*> createPluginWidgets(UUserWidget *parentWidget);
     
+    UFUNCTION(BlueprintCallable, meta = (DisplayNAme = "Is AR Capable Device"), Category = "Grasshopper Helpers")
+    static bool isArCapableDevice();
+    
 	GENERATED_BODY()
 	
 };
