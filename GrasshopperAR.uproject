@@ -41,11 +41,11 @@
 		},
 		{
 			"Name": "FMODStudio",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "Fsound",
-			"Enabled": true
+			"Enabled": false
 		}
 	]
 }
