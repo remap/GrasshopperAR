@@ -38,6 +38,14 @@
 		{
 			"Name": "highCastlePD",
 			"Enabled": true
+		},
+		{
+			"Name": "FMODStudio",
+			"Enabled": true
+		},
+		{
+			"Name": "Fsound",
+			"Enabled": true
 		}
 	]
 }
