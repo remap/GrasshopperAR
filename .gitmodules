@@ -10,3 +10,6 @@
 [submodule "Plugins/OSC"]
 	path = Plugins/OSC
 	url = https://github.com/bsubbaraman/UE4-OSC.git
+[submodule "Plugins/Fsound"]
+	path = Plugins/Fsound
+	url = https://github.com/wzq94qzw/GrasshopperSoundPlugin.git
