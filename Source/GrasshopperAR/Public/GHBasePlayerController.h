@@ -14,6 +14,10 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FToggleMasterUiDelegate);
 UCLASS()
 class GRASSHOPPERAR_API AGHBasePlayerController : public APlayerController
 {
+    AGHBasePlayerController();
+    AGHBasePlayerController(const FObjectInitializer& ObjectInitializer);
+    ~AGHBasePlayerController();
+    
 	GENERATED_BODY()
 	
 public:

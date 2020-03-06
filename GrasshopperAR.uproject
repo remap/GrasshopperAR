@@ -17,17 +17,6 @@
 	],
 	"Plugins": [
 		{
-			"Name": "GoogleARCore",
-			"Enabled": true,
-			"SupportedTargetPlatforms": [
-				"Android"
-			]
-		},
-		{
-			"Name": "GoogleARCoreServices",
-			"Enabled": true
-		},
-		{
 			"Name": "DDTools",
 			"Enabled": true
 		},
@@ -59,6 +48,13 @@
 			"Enabled": true,
 			"SupportedTargetPlatforms": [
 				"IOS"
+			]
+		},
+		{
+			"Name": "GoogleARCore",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Android"
 			]
 		}
 	]

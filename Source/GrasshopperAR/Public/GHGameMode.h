@@ -12,6 +12,8 @@
 UCLASS()
 class GRASSHOPPERAR_API AGHGameMode : public AGameModeBase
 {
+    ~AGHGameMode();
+    
 //	GENERATED_BODY()
     GENERATED_UCLASS_BODY()
 	
@@ -23,4 +25,13 @@ class GRASSHOPPERAR_API AGHGameMode : public AGameModeBase
     
     APlayerController *SpawnPlayerController(ENetRole InRemoteRole, const FString & Options) override;
     UClass* GetDefaultPawnClassForController_Implementation(AController* InController) override;
+    
+    virtual void PreLogin(const FString & Options, const FString & Address,
+                  const FUniqueNetIdRepl & UniqueId, FString & ErrorMessage) override;
+    
+    virtual APlayerController * Login(UPlayer * NewPlayer, ENetRole InRemoteRole,
+                                      const FString & Portal, const FString & Options,
+                                      const FUniqueNetIdRepl & UniqueId, FString & ErrorMessage) override;
+    
+    virtual void PostLogin(APlayerController * NewPlayer) override;
 };
