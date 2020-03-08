@@ -3,7 +3,12 @@
 
 #include "GHGameInstance.h"
 #include "DDLog.h"
+#include "git-describe.h"
 
+#define STRINGIZE_VERSION(v) STRINGIZE_TOKEN(v)
+#define STRINGIZE_TOKEN(t) #t
+#define CODE_VERSION STRINGIZE_VERSION(GIT_DESCRIBE)
+#define BRANCH_NAME STRINGIZE_VERSION(GIT_BRANCH)
 
 UGHGameInstance::UGHGameInstance()
 :UGameInstance()
@@ -20,4 +25,16 @@ UGHGameInstance::UGHGameInstance(const FObjectInitializer& ObjectInitializer)
 UGHGameInstance::~UGHGameInstance()
 {
     DLOG_DEBUG("GAME INSTANCE DTOR");
+}
+
+FString
+UGHGameInstance::getCodeVersion() const
+{
+    return FString(CODE_VERSION);
+}
+
+FString
+UGHGameInstance::getBranchName() const
+{
+    return FString(BRANCH_NAME);
 }
