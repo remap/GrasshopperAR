@@ -58,12 +58,20 @@
 			]
 		}
 	],
-    "PreBuildSteps" : {
-        "Mac": [
-            "cd `dirname $(ProjectFile)` && export GIT_BRANCH=`git rev-parse --abbrev-ref HEAD`",
-            "cd `dirname $(ProjectFile)` && echo \"#define GIT_BRANCH ${GIT_BRANCH}\" > Source/GrasshopperAR/Private/git-describe.h",
-            "cd `dirname $(ProjectFile)` && export GIT_DESCRIBE=`git describe --always --dirty` && echo \"GrasshopperAR code version ${GIT_DESCRIBE}\"",
-            "cd `dirname $(ProjectFile)` && echo \"#define GIT_DESCRIBE ${GIT_DESCRIBE}\" >> Source/GrasshopperAR/Private/git-describe.h"
-        ]
-    }
+	"PreBuildSteps": {
+		"Mac": [
+			"cd `dirname $(ProjectFile)` && export GIT_BRANCH=`git rev-parse --abbrev-ref HEAD`",
+			"cd `dirname $(ProjectFile)` && echo \"#define GIT_BRANCH ${GIT_BRANCH}\" > Source/GrasshopperAR/Private/git-describe.h",
+			"cd `dirname $(ProjectFile)` && export GIT_DESCRIBE=`git describe --always --dirty` && echo \"GrasshopperAR code version ${GIT_DESCRIBE}\"",
+			"cd `dirname $(ProjectFile)` && echo \"#define GIT_DESCRIBE ${GIT_DESCRIBE}\" >> Source/GrasshopperAR/Private/git-describe.h"
+		],
+		"Win64": [
+			"for %%F in ($(ProjectFile)) do set ProjectDir=%%~dpF && cd $(ProjectDir)",
+			"git rev-parse --abbrev-ref HEAD > git-branch.tmp && set /p GIT_BRANCH= < git-branch.tmp",
+			"git describe --always --dirty > git-describe.tmp && set /p GIT_DESCRIBE= < git-describe.tmp",
+			"echo #define GIT_BRANCH %GIT_BRANCH% > Source/GrasshopperAR/Private/git-describe.h",
+			"echo #define GIT_DESCRIBE %GIT_DESCRIBE% >> Source/GrasshopperAR/Private/git-describe.h",
+			"del git-branch.tmp && del git-describe.tmp"
+		]
+	}
 }
