@@ -26,4 +26,19 @@ public:
     
     UPROPERTY(BlueprintCallable, BlueprintAssignable)
     FToggleMasterUiDelegate OnToggleMasterUiDelegate;
+    
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, ReplicatedUsing=OnRep_IsAvatarHidden)
+    bool isAvatarHidden;
+    
+    UFUNCTION(BlueprintCallable)
+    void SetIsAvatarHidden(bool isHidden);
+    
+    UFUNCTION(BlueprintNativeEvent)
+    void OnRepNotify_IsAvatarHidden();
+    
+private:
+    
+    UFUNCTION()
+    void OnRep_IsAvatarHidden();
+    
 };
