@@ -40,6 +40,13 @@ public:
     UFUNCTION(BlueprintNativeEvent)
     void OnRepNotify_IsAvatarHidden();
     
+    /**
+     * BP wrapper for APlayerController::ClientTravel
+     * Performs seamless travel.
+     */
+    UFUNCTION(BlueprintCallable)
+    void TravelToMap(FString mapName);
+    
 private:
     
     UFUNCTION()

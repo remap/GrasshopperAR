@@ -60,3 +60,9 @@ void AGHBasePlayerController::OnRepNotify_IsAvatarHidden_Implementation()
 {
     // nothing here
 }
+
+void AGHBasePlayerController::TravelToMap(FString mapName)
+{
+    DLOG_DEBUG("Seamless ClientTravel to map {}", TCHAR_TO_ANSI(*mapName));
+    ClientTravel(mapName, TRAVEL_Relative, true);
+}
