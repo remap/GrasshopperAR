@@ -81,8 +81,7 @@ APlayerController* AGHGameMode::Login(UPlayer * NewPlayer, ENetRole InRemoteRole
                                   const FString & Portal, const FString & Options,
                                   const FUniqueNetIdRepl & UniqueId, FString & ErrorMessage)
 {
-    DLOG_DEBUG("LOGIN: new player {} net role {} portal {} options {} unqiue id {} error message {}",
-               (long int)NewPlayer,
+    DLOG_DEBUG("LOGIN: new player. net role {} portal {} options {} unqiue id {} error message {}",
                (int)InRemoteRole,
                TCHAR_TO_ANSI(*Portal),
                TCHAR_TO_ANSI(*Options),
