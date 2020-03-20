@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GHPlayerState.h"
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/PlayerStart.h"
 #include "GHBasePlayerController.generated.h"
@@ -28,28 +29,18 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     APlayerStart *playerStart;
     
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    TArray<FName> enteredGameLevels;
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    TArray<FName> lobbyLevels;
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    TArray<FString> startTags;
+    
     UPROPERTY(BlueprintCallable, BlueprintAssignable)
     FToggleMasterUiDelegate OnToggleMasterUiDelegate;
     
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, ReplicatedUsing=OnRep_IsAvatarHidden)
-    bool isAvatarHidden;
-    
     UFUNCTION(BlueprintCallable)
-    void SetIsAvatarHidden(bool isHidden);
-    
-    UFUNCTION(BlueprintNativeEvent)
-    void OnRepNotify_IsAvatarHidden();
-    
-    /**
-     * BP wrapper for APlayerController::ClientTravel
-     * Performs seamless travel.
-     */
-    UFUNCTION(BlueprintCallable)
-    void TravelToMap(FString mapName);
-    
-private:
-    
-    UFUNCTION()
-    void OnRep_IsAvatarHidden();
-    
+    AGHPlayerState* getPlayerState();
 };
