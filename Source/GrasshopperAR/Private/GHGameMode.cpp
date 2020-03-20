@@ -60,7 +60,7 @@ AGHGameMode::GetDefaultPawnClassForController_Implementation(AController* InCont
         return ghPlayerController->ghPawnClass;
     }
     else
-        DLOG_ERROR("couldn't get a pawn class from player controller obbject");
+        DLOG_ERROR("couldn't get a pawn class from player controller object");
     
     return NULL;
 }
