@@ -56,9 +56,14 @@
 			"SupportedTargetPlatforms": [
 				"Android"
 			]
+		},
+		{
+			"Name": "EditorTools",
+			"Enabled": true
 		}
 	],
-	"PreBuildSteps": {
+	"PreBuildSteps":
+	{
 		"Mac": [
 			"cd `dirname $(ProjectFile)` && export GIT_BRANCH=`git rev-parse --abbrev-ref HEAD`",
 			"cd `dirname $(ProjectFile)` && echo \"#define GIT_BRANCH ${GIT_BRANCH}\" > Source/GrasshopperAR/Private/git-describe.h",

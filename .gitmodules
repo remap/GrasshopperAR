@@ -16,3 +16,6 @@
 [submodule "Plugins/FMOD"]
 	path = Plugins/FMOD
 	url = https://github.com/wzq94qzw/GrasshopperFmod.git
+[submodule "Plugins/EditorTools"]
+	path = Plugins/EditorTools
+	url = https://github.com/daricalouie/UE4_EditorTools/
