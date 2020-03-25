@@ -19,3 +19,6 @@
 [submodule "Plugins/EditorTools"]
 	path = Plugins/EditorTools
 	url = https://github.com/daricalouie/UE4_EditorTools/
+[submodule "Plugins/FiducialRelocalizer"]
+	path = Plugins/FiducialRelocalizer
+	url = https://github.com/remap/FiducialRelocalizer.git

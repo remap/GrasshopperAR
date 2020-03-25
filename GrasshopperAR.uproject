@@ -60,6 +60,10 @@
 		{
 			"Name": "EditorTools",
 			"Enabled": true
+		},
+		{
+			"Name": "FiducialRelocalizer",
+			"Enabled": true
 		}
 	],
 	"PreBuildSteps":
