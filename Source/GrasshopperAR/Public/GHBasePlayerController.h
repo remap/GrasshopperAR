@@ -43,4 +43,13 @@ public:
     
     UFUNCTION(BlueprintCallable)
     AGHPlayerState* getPlayerState();
+    
+    
+    // exists lobby levels and loads specified game level
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+    void enterGameLevel(FName levelName, bool unloadPreviousLevels);
+    
+    // unloads game levels and loads lobby levels
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+    void exitGameLevel();
 };
