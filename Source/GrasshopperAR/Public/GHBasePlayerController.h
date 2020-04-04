@@ -47,7 +47,7 @@ public:
     
     // exists lobby levels and loads specified game level
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-    void enterGameLevel(FName levelName, bool unloadPreviousLevels);
+    void enterGameLevel();
     
     // unloads game levels and loads lobby levels
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
