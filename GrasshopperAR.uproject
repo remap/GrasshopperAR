@@ -75,7 +75,7 @@
 			"cd `dirname $(ProjectFile)` && echo \"#define GIT_DESCRIBE ${GIT_DESCRIBE}\" >> Source/GrasshopperAR/Private/git-describe.h"
 		],
 		"Win64": [
-			"for %%F in ($(ProjectFile)) do set ProjectDir=%%~dpF && cd $(ProjectDir)",
+			"for %%F in ($(ProjectFile)) do set ProjectDir=%%~dpF && cd /d $(ProjectDir)",
 			"git rev-parse --abbrev-ref HEAD > git-branch.tmp && set /p GIT_BRANCH= < git-branch.tmp",
 			"git describe --always --dirty > git-describe.tmp && set /p GIT_DESCRIBE= < git-describe.tmp",
 			"echo #define GIT_BRANCH %GIT_BRANCH% > Source/GrasshopperAR/Private/git-describe.h",
