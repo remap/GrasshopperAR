@@ -22,3 +22,6 @@
 [submodule "Plugins/FiducialRelocalizer"]
 	path = Plugins/FiducialRelocalizer
 	url = https://github.com/remap/FiducialRelocalizer.git
+[submodule "Plugins/highCastleSound"]
+	path = Plugins/highCastleSound
+	url = https://github.com/wzq94qzw/highCastleSound.git
