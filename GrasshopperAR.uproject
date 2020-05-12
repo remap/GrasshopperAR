@@ -69,6 +69,10 @@
 		{
 			"Name": "highCastleSound",
 			"Enabled": true
+		},
+		{
+			"Name": "DDAugmented",
+			"Enabled": true
 		}
 	],
 	"PreBuildSteps":

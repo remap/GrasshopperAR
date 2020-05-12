@@ -25,3 +25,6 @@
 [submodule "Plugins/highCastleSound"]
 	path = Plugins/highCastleSound
 	url = https://github.com/wzq94qzw/highCastleSound.git
+[submodule "Plugins/DDAugmented"]
+	path = Plugins/DDAugmented
+	url = https://github.com/peetonn/DDAugmented.git
