@@ -3,6 +3,7 @@
 
 #include "GHGameInstance.h"
 #include "DDLog.h"
+#include "DDBlueprintLibrary.h"
 #include "git-describe.h"
 
 #define STRINGIZE_VERSION(v) STRINGIZE_TOKEN(v)
@@ -14,6 +15,8 @@ UGHGameInstance::UGHGameInstance()
 :UGameInstance()
 {
     DLOG_DEBUG("GAME INSTANCE DEFAULT CTOR");
+    DLOG_INFO("Game Instance Network Version {}",
+              TCHAR_TO_ANSI(*UDDBlueprintLibrary::getNetworkVersion()));
 }
 
 UGHGameInstance::UGHGameInstance(const FObjectInitializer& ObjectInitializer)
