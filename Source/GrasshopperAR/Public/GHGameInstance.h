@@ -24,5 +24,12 @@ public:
     FString getBranchName() const;
     
 	GENERATED_BODY()
+    
+    void setNetworkVersionOverride();
+    
+private:
+    
+    static uint32 getNetworkVersionGrasshopper();
+    
 	
 };
