@@ -8,7 +8,7 @@ public class GrasshopperAR : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AugmentedReality" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] { "DDHelpers", "DDManager", "DDBase", "DDLog", "DDBlueprints" });
 
