@@ -3,6 +3,7 @@
 
 #include "GHBasePlayerController.h"
 #include "DDLog.h"
+#include "GameFramework/GameStateBase.h"
 
 AGHBasePlayerController::AGHBasePlayerController()
 : APlayerController()
@@ -25,4 +26,27 @@ AGHBasePlayerController::~AGHBasePlayerController()
 AGHPlayerState* AGHBasePlayerController::getPlayerState()
 {
     return Cast<AGHPlayerState>(GetPawn()->GetPlayerState());
+}
+
+void
+AGHBasePlayerController::SetNewPlayerName(FString name)
+{
+    if (!name.IsEmpty())
+    {
+        ServerSetPlayerName(getPlayerState()->GetPlayerName(),
+                            name.Mid(0,15));
+    }
+}
+
+void
+AGHBasePlayerController::ServerSetPlayerName_Implementation(const FString& currentName, const FString& newName)
+{
+    for (auto& playerState : GetWorld()->GetGameState()->PlayerArray)
+    {
+        if (playerState->GetPlayerName().Equals(currentName))
+        {
+            playerState->SetPlayerName(newName);
+            break;
+        }
+    }
 }

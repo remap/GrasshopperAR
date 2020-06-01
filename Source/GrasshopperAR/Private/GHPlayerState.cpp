@@ -10,13 +10,14 @@ AGHPlayerState::AGHPlayerState()
 : APlayerState()
 {
     DLOG_TRACE("AGHPlayerState::AGHPlayerState()");
-    isAvatarHidden = false;
+    init();
 }
 
 
 AGHPlayerState::AGHPlayerState(const FObjectInitializer& ObjectInitializer)
 {
     DLOG_TRACE("AGHPlayerState::AGHPlayerState(const FObjectInitializer&)");
+    init();
 }
 
 AGHPlayerState::~AGHPlayerState()
@@ -74,3 +75,30 @@ void AGHPlayerState::OnRepNotify_IsGameActive_Implementation()
 {
     // nothing here
 }
+
+void
+AGHPlayerState::SetPlayerName(const FString &S)
+{
+    Super::SetPlayerName(S);
+}
+
+FString
+AGHPlayerState::GetPlayerNameCustom() const
+{
+    return Super::GetPlayerNameCustom();
+}
+
+void
+AGHPlayerState::init()
+{
+    bUseCustomPlayerNames = true;
+    isAvatarHidden = false;
+}
+
+void
+AGHPlayerState::OnRep_PlayerName()
+{
+    Super::OnRep_PlayerName();
+    OnRepNotify_PlayerName();
+}
+

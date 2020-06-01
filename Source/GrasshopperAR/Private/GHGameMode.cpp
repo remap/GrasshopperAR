@@ -101,5 +101,12 @@ void AGHGameMode::PostLogin(APlayerController * NewPlayer)
     DLOG_DEBUG("POST LOGIN PLAYER CONTROLLER {}",
                TCHAR_TO_ANSI( *(NewPlayer->StaticClass()->GetDefaultObjectName().ToString())));
     
+    if (NewPlayer->GetPlayerState<AGHPlayerState>())
+    {
+        FString playerName("Silent Observer ");
+        playerName.Append(FString::FromInt(GetNumPlayers()));
+        NewPlayer->GetPlayerState<AGHPlayerState>()->SetPlayerName(playerName);
+    }
+    
     Super::PostLogin(NewPlayer);
 }

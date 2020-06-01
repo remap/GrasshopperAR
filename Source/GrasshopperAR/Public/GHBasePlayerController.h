@@ -54,4 +54,11 @@ public:
     // unloads game levels and loads lobby levels
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
     void exitGameLevel();
+    
+    UFUNCTION(BlueprintCallable)
+    void SetNewPlayerName(FString name);
+    
+    UFUNCTION(Server, Reliable, BlueprintCallable)
+    void ServerSetPlayerName(const FString& currentName,
+                             const FString& newName);
 };

@@ -37,11 +37,25 @@ public:
     UFUNCTION(BlueprintNativeEvent)
     void OnRepNotify_IsGameActive();
 
+    UFUNCTION(BlueprintCallable)
+    void SetPlayerName(const FString & S) override;
+    
+    FString GetPlayerNameCustom() const override;
+    
+    void OnRep_PlayerName() override;
+    
+    UFUNCTION(BlueprintImplementableEvent)
+    void OnRepNotify_PlayerName();
+    
 private:
 
+    void init();
+    
     UFUNCTION()
     void OnRep_IsAvatarHidden();
     
     UFUNCTION()
     void OnRep_IsGameActive();
+    
+    FString playerName_;
 };
