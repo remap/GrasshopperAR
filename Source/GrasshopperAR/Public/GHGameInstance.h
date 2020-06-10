@@ -6,16 +6,34 @@
 #include "Engine/GameInstance.h"
 #include "GHGameInstance.generated.h"
 
+UENUM()
+enum ConnectionStatus
+{
+  Disconnected  UMETA(DisplayName = "Disconnected"),
+  Connecting    UMETA(DisplayName = "Connecting"),
+  Connected     UMETA(DisplayName = "Connected"),
+};
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FGameInstanceConnectionStatusUpdate, ConnectionStatus, oldStatus, ConnectionStatus, newStatus);
+
 /**
- * 
+ * Custom implementation for Game Instance class
  */
 UCLASS()
 class GRASSHOPPERAR_API UGHGameInstance : public UGameInstance
 {
+    GENERATED_BODY()
 public:
     UGHGameInstance();
     UGHGameInstance(const FObjectInitializer& ObjectInitializer);
     ~UGHGameInstance();
+    
+    void setNetworkVersionOverride();
+    bool HandleOpenCommand(const TCHAR * Cmd,
+                           FOutputDevice & Ar,
+                           UWorld * InWorld) override;
+    void LoadComplete(const float LoadTime,
+                      const FString & MapName) override;
     
     UFUNCTION(BlueprintCallable)
     FString getCodeVersion() const;
@@ -23,13 +41,17 @@ public:
     UFUNCTION(BlueprintCallable)
     FString getBranchName() const;
     
-	GENERATED_BODY()
+    UFUNCTION(BlueprintCallable)
+    ConnectionStatus getConnectionStatus() const;
     
-    void setNetworkVersionOverride();
+    UFUNCTION(BlueprintCallable)
+    void setConnectionStatus(ConnectionStatus status);
     
+    UPROPERTY(BlueprintAssignable)
+    FGameInstanceConnectionStatusUpdate OnConnectionStatusUpdated;
 private:
-    
     static uint32 getNetworkVersionGrasshopper();
-    
+    ConnectionStatus connectionStatus_;
 	
+    void updateConnectionStatus(ConnectionStatus newStatus);
 };
