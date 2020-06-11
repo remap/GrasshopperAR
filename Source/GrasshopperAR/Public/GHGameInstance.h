@@ -16,6 +16,7 @@ enum ConnectionStatus
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FGameInstanceConnectionStatusUpdate, ConnectionStatus, oldStatus, ConnectionStatus, newStatus);
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FGameInstancePlayerStateUpdate, bool, oldIsActive, bool, newIsActive);
 /**
  * Custom implementation for Game Instance class
  */
@@ -49,6 +50,13 @@ public:
     
     UPROPERTY(BlueprintAssignable)
     FGameInstanceConnectionStatusUpdate OnConnectionStatusUpdated;
+    
+    UPROPERTY(BlueprintAssignable)
+    FGameInstancePlayerStateUpdate OnPlayerStateUpdated;
+
+    UFUNCTION(BlueprintCallable)
+    void notifyPlayerStateUpdate(bool oldIsActive, bool newIsActive);
+    
 private:
     static uint32 getNetworkVersionGrasshopper();
     ConnectionStatus connectionStatus_;

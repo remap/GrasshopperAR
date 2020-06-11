@@ -170,6 +170,13 @@ UGHGameInstance::LoadComplete(const float LoadTime, const FString & MapName)
     }
 }
 
+
+void
+UGHGameInstance::notifyPlayerStateUpdate(bool oldIsActive, bool newIsActive)
+{
+    OnPlayerStateUpdated.Broadcast(oldIsActive, newIsActive);
+}
+
 void
 UGHGameInstance::updateConnectionStatus(ConnectionStatus newStatus)
 {
