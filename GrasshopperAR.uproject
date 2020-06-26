@@ -26,10 +26,6 @@
 			"Enabled": true
 		},
 		{
-			"Name": "highCastlePD",
-			"Enabled": true
-		},
-		{
 			"Name": "FMODStudio",
 			"Enabled": false
 		},
@@ -57,10 +53,6 @@
 			"SupportedTargetPlatforms": [
 				"Android"
 			]
-		},
-		{
-			"Name": "EditorTools",
-			"Enabled": true
 		},
 		{
 			"Name": "FiducialRelocalizer",
