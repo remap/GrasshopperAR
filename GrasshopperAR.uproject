@@ -65,6 +65,10 @@
 		{
 			"Name": "DDAugmented",
 			"Enabled": true
+		},
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true
 		}
 	],
 	"PreBuildSteps":
