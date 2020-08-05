@@ -16,3 +16,9 @@
 [submodule "Plugins/DDAugmented"]
 	path = Plugins/DDAugmented
 	url = https://github.com/peetonn/DDAugmented.git
+[submodule "Plugins/WebCameraFeed"]
+	path = Plugins/WebCameraFeed
+	url = https://github.com/bsubbaraman/WebCameraFeed
+[submodule "Plugins/VideoCore"]
+	path = Plugins/VideoCore
+	url = https://github.com/peetonn/VideoCore
