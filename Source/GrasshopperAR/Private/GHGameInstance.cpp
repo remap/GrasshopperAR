@@ -140,6 +140,13 @@ UGHGameInstance::LoadComplete(const float LoadTime, const FString & MapName)
 {
     DLOG_TRACE("LoadComplete: time {} map name {}",
                LoadTime, TCHAR_TO_ANSI(*MapName));
+    
+    if (!FDDModuleManager::getSharedInstance())
+    {
+        DLOG_ERROR("DDModuleManager is not initialized. It should be initialized by this time.");
+        return;
+    }
+    
     UWorld *world = FDDModuleManager::getSharedInstance()->getLastWorldCreated();
     
     // check if we really connected
