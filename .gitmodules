@@ -10,15 +10,12 @@
 [submodule "Plugins/FiducialRelocalizer"]
 	path = Plugins/FiducialRelocalizer
 	url = https://github.com/remap/FiducialRelocalizer.git
-[submodule "Plugins/highCastleSound"]
-	path = Plugins/highCastleSound
-	url = https://github.com/wzq94qzw/highCastleSound.git
 [submodule "Plugins/DDAugmented"]
 	path = Plugins/DDAugmented
 	url = https://github.com/peetonn/DDAugmented.git
 [submodule "Plugins/WebCameraFeed"]
 	path = Plugins/WebCameraFeed
-	url = https://github.com/bsubbaraman/WebCameraFeed.git
+	url = https://github.com/bakjos/WebCameraFeed.git
 [submodule "Plugins/VideoCore"]
 	path = Plugins/VideoCore
 	url = https://github.com/peetonn/VideoCore.git
