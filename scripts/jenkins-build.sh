@@ -1,5 +1,6 @@
 #!/bin/bash
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+GIT_CHECKOUT_DIR="${MYDIR}/.."
 UEDIR="/Users/Shared/Epic Games/UE_4.25"
 CMD_GEN_PROJECT="$UEDIR/Engine/Build/BatchFiles/Mac/GenerateProjectFiles.sh"
 CMD_RUN_UAT="$UEDIR/Engine/Build/BatchFiles/RunUAT.sh"
