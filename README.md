@@ -1,20 +1,27 @@
 # GrasshopperAR
 UE4 Shell App for Grasshopper AR project.
 
+## Environment Setup
+
+### Prerequisites
+
+
+
+### Bootstrapping
+
+::macOS::
+
+Open Terminal.app, copy and paste command below and hit Enter:
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/remap/GrasshopperAR/master/scripts/bootstrap.sh)"
+```
+
+Enter your laptop password to authorize installation and Press Enter whenever scripts asks you.
+
 ## Description
 
-The app supports AR-capable devices and desktop devices, compiled from the same source code base.
-Depending on the platform, different classes are loaded:
-* AR platforms:
-	* *AR Pawn*
-	* *AR Player Controller* 
-* desktop platforms:
-	* *VR Pawn* (/Spectator Pawn/)
-	* *VR Player Controller*
-
-There are also different levels for AR/VR.
-
-> ❗️This workflow is being [tested](https://udn.unrealengine.com/questions/553302/how-to-load-different-gamemodes-for-different-plat.html). Need to confirm if it works and whether it’ll play nicely with the multiplayer.
+TBD
 
 ## Project folder structure
 
