@@ -3,9 +3,6 @@
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 GIT_CHECKOUT_DIR="${MYDIR}/.."
 
-echo $MYDIR
-echo $GIT_CHECKOUT_DIR
-
 # brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
