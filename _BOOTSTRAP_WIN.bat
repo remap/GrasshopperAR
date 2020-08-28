@@ -1,8 +1,8 @@
 @ECHO OFF
 
 set PROJECTDIR=%cd%
-set UEDIR=D:\ue_engine\engines\UE_4.25\UE_4.25\Engine
-:: set UEDIR=C:\Program Files\Epic Games\UE_4.25\Engine
+:: set UEDIR=D:\ue_engine\engines\UE_4.25\UE_4.25\Engine
+set UEDIR=C:\Program Files\Epic Games\UE_4.25\Engine
 
 FOR /F "tokens=1 USEBACKQ" %%F IN (`git config user.name`) DO (
 SET _STRING=%%F
