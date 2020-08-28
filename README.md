@@ -6,13 +6,15 @@ UE4 Shell App for Grasshopper AR project.
 ### Prerequisites
 
 1. [Unreal Engine 4.25.3](https://www.unrealengine.com/en-US/get-now)
-2. **macOS** [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
-	* Install Xcode using AppStore
-	* Open Xcode and Agree to the license
-	* Install additional developer tools when prompted
-	* Close Xcode
-2. **win** [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
+2. Dev tools:
+    * **macOS** [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
+	    * Install Xcode using AppStore
+	    * Open Xcode and Agree to the license
+	    * Install additional developer tools when prompted
+	    * Close Xcode
+    * **win** [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
 3. [GitHub](http://github.com/) account
+    * Make sure your account is added to REMAP organization (let us know).
 4. [GitHub Desktop Client](https://desktop.github.com/)
 	* Open GitHub Desktop Client after installing
 	* Authenticate with your GitHub account you created in step 3
