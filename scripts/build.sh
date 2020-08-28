@@ -29,6 +29,15 @@ function packageProject()
     buildProject
     goToRepo
 
+    case "$1" in
+        ios)
+            platform="IOS"
+            ;;
+        *)
+            platform="Mac"
+            ;;
+    esac
+
     echo "Packaging project into ${GIT_CHECKOUT_DIR}/Packaged ..."
     "$CMD_RUN_UAT" BuildCookRun \
     -nocompileeditor -nop4 \
@@ -37,7 +46,7 @@ function packageProject()
     -archivedirectory="${GIT_CHECKOUT_DIR}/Packaged" \
     -package -clientconfig=Shipping \
     -ue4exe="$CMD_UE_EDITOR" \
-    -clean -pak -prereqs -nodebuginfo -targetplatform=Mac -build -utf8output -compile
+    -clean -pak -prereqs -nodebuginfo -targetplatform=$platform -build -utf8output -compile
 }
 
 arg="$1"
@@ -46,7 +55,10 @@ case $arg in
         buildProject
         ;;
     --package)
-        packageProject
+        packageProject "mac"
+        ;;
+    --packageios)
+        packageProject "ios"
         ;;
     *)
         echo "build.sh [ project | package ]"
