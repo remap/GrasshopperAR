@@ -43,6 +43,9 @@ public:
     FString getBranchName() const;
     
     UFUNCTION(BlueprintCallable)
+    FString getBuildVersion() const;
+    
+    UFUNCTION(BlueprintCallable)
     ConnectionStatus getConnectionStatus() const;
     
     UFUNCTION(BlueprintCallable)

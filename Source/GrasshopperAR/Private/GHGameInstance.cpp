@@ -61,6 +61,12 @@ UGHGameInstance::getBranchName() const
     return FString(BRANCH_NAME);
 }
 
+FString
+UGHGameInstance::getBuildVersion() const
+{
+    return UDDBlueprintLibrary::GetBundleVersionString();
+}
+
 void
 UGHGameInstance::setNetworkVersionOverride()
 {
