@@ -46,7 +46,7 @@ function packageProject()
     -archivedirectory="${GIT_CHECKOUT_DIR}/Packaged" \
     -package -clientconfig=Shipping \
     -ue4exe="$CMD_UE_EDITOR" \
-    -clean -pak -prereqs -nodebuginfo -targetplatform=$platform -build -utf8output -compile
+    -clean -pak -prereqs -nodebuginfo -targetplatform=$platform -build -utf8output
 }
 
 arg="$1"
