@@ -64,7 +64,7 @@ UGHGameInstance::getBranchName() const
 FString
 UGHGameInstance::getBuildVersion() const
 {
-    return UDDBlueprintLibrary::GetBundleVersionString();
+    return UDDBlueprintLibrary::getBundleVersionString();
 }
 
 void
