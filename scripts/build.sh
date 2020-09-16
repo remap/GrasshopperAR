@@ -31,7 +31,7 @@ function packageProject()
 
     case "$1" in
         ios)
-            platform="IOS"
+            platform="IOS -distribution"
             ;;
         *)
             platform="Mac"
