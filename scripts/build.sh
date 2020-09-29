@@ -21,6 +21,20 @@ function buildProject()
     xcodebuild -scheme GrasshopperAR build
 }
 
+
+function buildLighting()
+{
+    CMD_UE_EDITOR="$UEDIR/Engine/Binaries/Mac/UE4Editor-Cmd"
+    # "$CMD_UE_EDITOR" "${GIT_CHECKOUT_DIR}/GrasshopperAR.uproject" \
+    # -run=resavepackages -buildlighting -quality=High -allowcommandletrendering
+
+    CMD_RUN_UAT="$UEDIR/Engine/Build/BatchFiles/RunUAT.sh"
+
+    echo "Building lighting..."
+    "$CMD_RUN_UAT" RebuildLightmaps \
+    -project="${GIT_CHECKOUT_DIR}/GrasshopperAR.uproject" -allmaps
+}
+
 function packageProject()
 {
     CMD_RUN_UAT="$UEDIR/Engine/Build/BatchFiles/RunUAT.sh"
@@ -59,6 +73,9 @@ case $arg in
         ;;
     --packageios)
         packageProject "ios"
+        ;;
+    --lighting)
+        buildLighting
         ;;
     *)
         echo "build.sh [ project | package ]"

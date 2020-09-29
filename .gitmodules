@@ -19,3 +19,6 @@
 [submodule "Plugins/VideoCore"]
 	path = Plugins/VideoCore
 	url = https://github.com/peetonn/VideoCore.git
+[submodule "Plugins/AppCenter"]
+	path = Plugins/AppCenter
+	url = https://github.com/PushkinStudio/AppCenter-SDK-UE4.git
