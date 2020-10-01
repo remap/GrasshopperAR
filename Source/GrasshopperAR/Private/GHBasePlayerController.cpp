@@ -23,6 +23,13 @@ AGHBasePlayerController::~AGHBasePlayerController()
     DLOG_DEBUG("PLAYER CONTROLLER DTOR AGHBasePlayerController::~AGHBasePlayerController()");
 }
 
+void AGHBasePlayerController::OnGameLevelsUpdated_Implementation(const TArray<FName>& gameLevels)
+{
+    if (GetNetMode() == ENetMode::NM_ListenServer ||
+        GetNetMode() == ENetMode::NM_DedicatedServer)
+        enteredGameLevels = gameLevels;
+}
+
 AGHPlayerState* AGHBasePlayerController::getPlayerState()
 {
     return Cast<AGHPlayerState>(GetPawn()->GetPlayerState());
