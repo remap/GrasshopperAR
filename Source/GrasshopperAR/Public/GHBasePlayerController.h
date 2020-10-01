@@ -32,6 +32,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     TArray<FName> enteredGameLevels;
     
+    UFUNCTION(Server, Reliable, BlueprintCallable)
+    void OnGameLevelsUpdated(const TArray<FName>& gameLevels);
+        
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     TArray<FName> lobbyLevels;
     
@@ -49,7 +52,7 @@ public:
     
     // exists lobby levels and loads specified game level
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-    void enterGameLevel();
+    void enterGameLevel(const TArray<FName>& levels);
     
     // unloads game levels and loads lobby levels
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
