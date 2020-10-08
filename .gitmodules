@@ -3,7 +3,7 @@
 	url = https://github.com/remap/DDTools.git
 [submodule "Plugins/PlaybackCtrl"]
 	path = Plugins/PlaybackCtrl
-	url = https://github.com/bsubbaraman/PlaybackCtrl.git
+	url = https://github.com/remap/PlaybackCtrl.git
 [submodule "Plugins/OSC"]
 	path = Plugins/OSC
 	url = https://github.com/bsubbaraman/UE4-OSC.git
