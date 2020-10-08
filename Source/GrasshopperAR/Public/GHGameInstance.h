@@ -17,6 +17,19 @@ enum ConnectionStatus
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FGameInstanceConnectionStatusUpdate, ConnectionStatus, oldStatus, ConnectionStatus, newStatus);
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FGameInstancePlayerStateUpdate, bool, oldIsActive, bool, newIsActive);
+
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
+class GRASSHOPPERAR_API UGameLevelListItem : public UObject {
+    GENERATED_BODY()
+public:
+    UPROPERTY(BlueprintReadWrite)
+    FText levelName;
+    
+    UPROPERTY(BlueprintReadWrite)
+    bool isLoaded;
+};
+
+
 /**
  * Custom implementation for Game Instance class
  */
@@ -59,6 +72,12 @@ public:
 
     UFUNCTION(BlueprintCallable)
     void notifyPlayerStateUpdate(bool oldIsActive, bool newIsActive);
+    
+    UFUNCTION(BlueprintCallable)
+    TArray<FString> GetAllMapNames() const;
+    
+    UFUNCTION(BlueprintCallable)
+    bool isLevelLoaded(FString levelName) const;
     
 private:
     static uint32 getNetworkVersionGrasshopper();
