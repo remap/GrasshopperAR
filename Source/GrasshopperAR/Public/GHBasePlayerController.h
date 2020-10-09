@@ -64,4 +64,7 @@ public:
     UFUNCTION(Server, Reliable, BlueprintCallable)
     void ServerSetPlayerName(const FString& currentName,
                              const FString& newName);
+    
+private:
+    
 };
