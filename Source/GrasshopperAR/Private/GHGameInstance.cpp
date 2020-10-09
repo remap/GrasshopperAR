@@ -8,6 +8,9 @@
 #include "git-describe.h"
 
 #include <Misc/NetworkVersion.h>
+#include <Engine/ObjectLibrary.h>
+#include <Kismet/GameplayStatics.h>
+#include <Engine/LevelStreaming.h>
 
 #include <string>
 #include <sstream>
@@ -201,4 +204,42 @@ UGHGameInstance::updateConnectionStatus(ConnectionStatus newStatus)
         // notify observers
         OnConnectionStatusUpdated.Broadcast(oldStatus, connectionStatus_);
     }
+}
+
+TArray<FString>
+UGHGameInstance::GetAllMapNames() const
+{
+    auto ObjectLibrary = UObjectLibrary::CreateLibrary(UWorld::StaticClass(), false, true);
+    ObjectLibrary->LoadAssetDataFromPath(TEXT("/Game/Maps"));
+    TArray<FAssetData> AssetDatas;
+    ObjectLibrary->GetAssetDataList(AssetDatas);
+    
+    DLOG_TRACE("Found maps: %d", AssetDatas.Num());
+
+    TArray<FString> Names = TArray<FString>();
+
+    for (int32 i = 0; i < AssetDatas.Num(); ++i)
+    {
+        FAssetData& AssetData = AssetDatas[i];
+
+        auto name = AssetData.AssetName.ToString();
+        Names.Add(name);
+    }
+    
+    Names.Sort();
+    
+    return Names;
+}
+
+bool
+UGHGameInstance::isLevelLoaded(FString levelName) const
+{
+    ULevelStreaming* ls = UGameplayStatics::GetStreamingLevel(this, FName(levelName));
+    
+     if(ls != NULL)
+     {
+         return (ls->IsLevelLoaded());
+     }
+    
+    return false;
 }
