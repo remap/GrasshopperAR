@@ -214,7 +214,7 @@ UGHGameInstance::GetAllMapNames() const
     TArray<FAssetData> AssetDatas;
     ObjectLibrary->GetAssetDataList(AssetDatas);
     
-    DLOG_TRACE("Found maps: %d", AssetDatas.Num());
+    DLOG_TRACE("Found maps: {}", AssetDatas.Num());
 
     TArray<FString> Names = TArray<FString>();
 
