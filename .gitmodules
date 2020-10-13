@@ -22,3 +22,6 @@
 [submodule "Plugins/AppCenter"]
 	path = Plugins/AppCenter
 	url = https://github.com/PushkinStudio/AppCenter-SDK-UE4.git
+[submodule "Plugins/UE4_EditorTools"]
+	path = Plugins/UE4_EditorTools
+	url = https://github.com/daricalouie/UE4_EditorTools.git
