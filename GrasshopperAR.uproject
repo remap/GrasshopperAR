@@ -57,10 +57,6 @@
 		{
 			"Name": "VideoCore",
 			"Enabled": true
-		},
-		{
-			"Name": "DatasmithImporter",
-			"Enabled": true
 		}
 	],
 	"PreBuildSteps":
