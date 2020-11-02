@@ -18,7 +18,7 @@
 	url = https://github.com/bakjos/WebCameraFeed.git
 [submodule "Plugins/VideoCore"]
 	path = Plugins/VideoCore
-	url = https://github.com/peetonn/VideoCore.git
+	url = https://github.com/remap/VideoCore.git
 [submodule "Plugins/AppCenter"]
 	path = Plugins/AppCenter
 	url = https://github.com/PushkinStudio/AppCenter-SDK-UE4.git
