@@ -238,7 +238,7 @@ UGHGameInstance::isLevelLoaded(FString levelName) const
     
      if(ls != NULL)
      {
-         return (ls->IsLevelLoaded());
+         return (ls->IsLevelLoaded() && ls->IsLevelVisible());
      }
     
     return false;
