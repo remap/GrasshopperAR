@@ -33,9 +33,9 @@ void AGHPlayerState::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & Ou
     DOREPLIFETIME(AGHPlayerState, isGameActive);
 }
 
-void AGHPlayerState::SetIsAvatarHidden(bool hidden)
+void AGHPlayerState::SetIsAvatarVisibility(bool hidden)
 {
-    if (HasAuthority() && hidden ^ isAvatarHidden)
+    if ( hidden ^ isAvatarHidden)
     {
         isAvatarHidden = hidden;
         OnRep_IsAvatarHidden();
@@ -54,11 +54,15 @@ void AGHPlayerState::SetIsGameActive(bool isActive)
 void AGHPlayerState::OnRep_IsAvatarHidden()
 {
     APawn *pawn = GetPawn();
-    pawn->GetRootComponent()->SetVisibility(!isAvatarHidden, true);
-    OnRepNotify_IsAvatarHidden();
-    
-    DLOG_DEBUG("Avatar visibility changed for player {}",
-               TCHAR_TO_ANSI(*GetPlayerName()));
+
+   if (pawn)
+    {
+        pawn->GetRootComponent()->SetVisibility(!isAvatarHidden, true);
+        OnRepNotify_IsAvatarHidden();
+
+        DLOG_DEBUG("Avatar visibility changed for player {}",
+            TCHAR_TO_ANSI(*GetPlayerName()));
+    }
 }
 
 void AGHPlayerState::OnRepNotify_IsAvatarHidden_Implementation()
