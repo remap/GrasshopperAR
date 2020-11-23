@@ -54,11 +54,15 @@ void AGHPlayerState::SetIsGameActive(bool isActive)
 void AGHPlayerState::OnRep_IsAvatarHidden()
 {
     APawn *pawn = GetPawn();
-    pawn->GetRootComponent()->SetVisibility(!isAvatarHidden, true);
-    OnRepNotify_IsAvatarHidden();
-    
-    DLOG_DEBUG("Avatar visibility changed for player {}",
-               TCHAR_TO_ANSI(*GetPlayerName()));
+
+    if (pawn)
+    {
+        pawn->GetRootComponent()->SetVisibility(!isAvatarHidden, true);
+        OnRepNotify_IsAvatarHidden();
+
+        DLOG_DEBUG("Avatar visibility changed for player {}",
+            TCHAR_TO_ANSI(*GetPlayerName()));
+    }
 }
 
 void AGHPlayerState::OnRepNotify_IsAvatarHidden_Implementation()
