@@ -65,6 +65,14 @@
 		{
 			"Name": "EditorTools",
 			"Enabled": true
+		},
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true
+		},
+		{
+			"Name": "AppCenter",
+			"Enabled": false
 		}
 	],
 	"PreBuildSteps":
