@@ -73,6 +73,10 @@
 		{
 			"Name": "AppCenter",
 			"Enabled": false
+		},
+		{
+			"Name": "NDIIOPlugin",
+			"Enabled": true
 		}
 	],
 	"PreBuildSteps":
