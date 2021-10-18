@@ -33,9 +33,9 @@ void AGHPlayerState::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & Ou
     DOREPLIFETIME(AGHPlayerState, isGameActive);
 }
 
-void AGHPlayerState::SetIsAvatarHidden(bool hidden)
+void AGHPlayerState::SetIsAvatarVisibility(bool hidden)
 {
-    if (HasAuthority() && hidden ^ isAvatarHidden)
+    if ( hidden ^ isAvatarHidden)
     {
         isAvatarHidden = hidden;
         OnRep_IsAvatarHidden();
@@ -55,7 +55,7 @@ void AGHPlayerState::OnRep_IsAvatarHidden()
 {
     APawn *pawn = GetPawn();
 
-    if (pawn)
+   if (pawn)
     {
         pawn->GetRootComponent()->SetVisibility(!isAvatarHidden, true);
         OnRepNotify_IsAvatarHidden();

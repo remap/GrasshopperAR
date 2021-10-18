@@ -19,11 +19,11 @@ class GRASSHOPPERAR_API AGHPlayerState : public APlayerState
 	GENERATED_BODY()
 	
 public:
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, ReplicatedUsing=OnRep_IsAvatarHidden)
+    UPROPERTY(VisibleAnywhere, BlueprintReadWrite, ReplicatedUsing=OnRep_IsAvatarHidden)
     bool isAvatarHidden;
     
     UFUNCTION(BlueprintCallable)
-    void SetIsAvatarHidden(bool isHidden);
+    void SetIsAvatarVisibility(bool isHidden);
     
     UFUNCTION(BlueprintNativeEvent)
     void OnRepNotify_IsAvatarHidden();
