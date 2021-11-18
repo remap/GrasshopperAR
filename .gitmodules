@@ -15,7 +15,7 @@
 	url = https://github.com/peetonn/DDAugmented.git
 [submodule "Plugins/WebCameraFeed"]
 	path = Plugins/WebCameraFeed
-	url = https://github.com/bakjos/WebCameraFeed.git
+	url = https://github.com/jburkeucla/WebCameraFeed.git
 [submodule "Plugins/VideoCore"]
 	path = Plugins/VideoCore
 	url = https://github.com/remap/VideoCore.git
