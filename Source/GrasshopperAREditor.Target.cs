@@ -10,5 +10,8 @@ public class GrasshopperAREditorTarget : TargetRules
 		Type = TargetType.Editor;
 
 		ExtraModuleNames.AddRange( new string[] { "GrasshopperAR", "DDLog", "DDManager" } );
+
+		bOverrideBuildEnvironment = true;
+		AdditionalCompilerArguments = "-Wno-unused-but-set-variable";
 	}
 }
