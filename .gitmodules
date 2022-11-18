@@ -4,9 +4,6 @@
 [submodule "Plugins/PlaybackCtrl"]
 	path = Plugins/PlaybackCtrl
 	url = https://github.com/remap/PlaybackCtrl.git
-[submodule "Plugins/OSC"]
-	path = Plugins/OSC
-	url = https://github.com/bsubbaraman/UE4-OSC.git
 [submodule "Plugins/FiducialRelocalizer"]
 	path = Plugins/FiducialRelocalizer
 	url = https://github.com/remap/FiducialRelocalizer.git
