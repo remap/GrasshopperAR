@@ -103,7 +103,7 @@ void AGHGameMode::PostLogin(APlayerController * NewPlayer)
     
     if (NewPlayer->GetPlayerState<AGHPlayerState>())
     {
-        FString playerName("Silent Observer ");
+        FString playerName("");
         playerName.Append(FString::FromInt(GetNumPlayers()));
         NewPlayer->GetPlayerState<AGHPlayerState>()->SetPlayerName(playerName);
     }
