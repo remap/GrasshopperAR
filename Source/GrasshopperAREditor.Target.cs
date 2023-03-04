@@ -12,6 +12,6 @@ public class GrasshopperAREditorTarget : TargetRules
 		ExtraModuleNames.AddRange( new string[] { "GrasshopperAR", "DDLog", "DDManager" } );
 
 		bOverrideBuildEnvironment = true;
-		AdditionalCompilerArguments = "-Wno-unused-but-set-variable";
+		//AdditionalCompilerArguments = "-Wno-unused-but-set-variable";
 	}
 }
